@@ -1,0 +1,88 @@
+@import 'bootstrap/dist/css/bootstrap.css';
+@import 'remixicon/fonts/remixicon.css';
+
+
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100vw;
+    height: 100vh;
+
+}
+/* img{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+} */
+
+.card{
+    position: relative;
+    min-width:20vw;
+    /* margin-top: 10px; */
+    /* margin-left: 20px; */
+    min-height: 90vh;
+    align-items: center;
+    text-align: center;
+}
+.card>img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+form{
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+form>input{
+    width: 70%;
+    border: none;
+    padding: 1vh;
+    /* background: rgb(202, 202, 202);
+    border: 1px solid white;
+    color: white; */
+    /* border-radius: 1vw; */
+    
+    
+}
+::placeholder{
+    color: red;
+}
+input[type="search"]{
+    background: none;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-bottom: 2px solid orangered;
+    background-color: rgb(51, 51, 51);
+}
+
+form>button{
+    background-color: coral;
+    padding: 0 2vh 0 2vh;
+}
+
+/* .footer{
+    position: absolute;
+    height: 40px;
+    width: 100%;
+    box-shadow: 1px 1px 4px black;
+    margin: auto;
+    background-color: antiquewhite;
+    bottom: 0%;
+    position: fixed;
+}
+small{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}  */
