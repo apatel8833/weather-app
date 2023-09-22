@@ -2,60 +2,62 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function page(props) {
+import React from 'react'
+
+export const page = () => {
   const [input, setInput] = useState("");
   const [details, setDetails] = useState([]);
   const [search, setSearch] = useState([]);
   const [img, setImg] = useState([]);
-  const [city,setCity] = useState("bhopal")
+  const [city, setCity] = useState("bhopal")
 
 
 
-  
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     setCity(input);
 
   }
 
-  useEffect(()=>{
+  useEffect(() => {
 
 
     async function fetchData(params) {
-      
+
       try {
-          const { data } = await axios.get(
-              `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=182107ca751f4b34b9b83025a28c4df9`
-          )
-          setDetails(data.main);
-          setSearch(data);
-          setImg(data.weather[0]);
-    
-          console.log(img);
-          setInput("");
+        const { data } = await axios.get(
+          `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=182107ca751f4b34b9b83025a28c4df9`
+        )
+        setDetails(data.main);
+        setSearch(data);
+        setImg(data.weather[0]);
+
+        console.log(img);
+        setInput("");
       }
       catch (error) {
-          console.log(error);
-    
+        console.log(error);
+
       }
     }
     fetchData();
-  },[city])
+  }, [city])
   // fetchData();
- 
+
   let d = new Date();
   let date = d.getDate();
   let year = d.getFullYear();
-  let month = d.toLocaleString("default",{month:"long"});
-  let day = d.toLocaleString("default",{weekday:"long"});
+  let month = d.toLocaleString("default", { month: "long" });
+  let day = d.toLocaleString("default", { weekday: "long" });
 
 
-  let time = d.toLocaleString([],{
-    hour:"2-digit",
-    minute:"2-digit",
-    second:"2-digit"
+  let time = d.toLocaleString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit"
   })
- 
+
   let com = 273.15
   let tamp = parseFloat(details.temp - com).toFixed();
   let tamp_max = parseFloat(details.temp_max - com).toFixed();
@@ -73,10 +75,10 @@ function page(props) {
     else if (img.main == "Haze") {
       emoji = "ri-sun-cloudy-fill"
     }
-    else{
+    else {
       emoji = "ri-moon-cloudy-fill"
     }
-    
+
   }
 
   return (
@@ -116,4 +118,4 @@ function page(props) {
   );
 }
 
-export default page;
+
