@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 
-export const page = () => {
+const page = () => {
   const [input, setInput] = useState("");
   const [details, setDetails] = useState([]);
   const [search, setSearch] = useState([]);
@@ -118,4 +118,6 @@ export const page = () => {
   );
 }
 
+
+export default page
 
